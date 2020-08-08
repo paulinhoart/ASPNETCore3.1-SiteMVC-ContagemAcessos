@@ -33,6 +33,6 @@ jobs:
     - name: Deployment no Azure App Service
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: ${{ secrets.WEB_APP }}
+        app-name: ${{ env.IDENTIFCAO_ALUNO }}
         package: './app'
 
