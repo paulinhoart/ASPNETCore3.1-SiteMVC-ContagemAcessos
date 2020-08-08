@@ -22,12 +22,13 @@ jobs:
         dotnet-version: 3.1.301
     
     - name: Build
-      run: dotnet build ${{env.DIRETORIO_WEBAPP}} --configuration Release --no-restore
-    
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet build ${{ env.DIRETORIO_WEBAPP }} --configuration Release
+  
     
     - name: Logando no Azure para Deployment
       uses: Azure/login@v1.1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+        
+
