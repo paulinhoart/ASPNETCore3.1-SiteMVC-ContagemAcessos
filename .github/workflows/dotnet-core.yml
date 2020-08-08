@@ -10,7 +10,7 @@ jobs:
   build:
     env:
       IDENTIFICACAO_ALUNO: anp-aluno-28
-      DIRETORIO_WEBAPP: ./SiteContagem
+      DIRETORIO_WEBAPP: ./SiteContagem/
       
     runs-on: ubuntu-latest
 
@@ -23,6 +23,7 @@ jobs:
     
     - name: Build
       run: dotnet build ${{env.DIRETORIO_WEBAPP}} --configuration Release --no-restore
+    
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     
