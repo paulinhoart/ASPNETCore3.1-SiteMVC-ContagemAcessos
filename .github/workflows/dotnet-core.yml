@@ -30,5 +30,9 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-        
+    - name: Deployment no Azure App Service
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: ${{ secrets.WEB_APP }}
+        package: './app'
 
